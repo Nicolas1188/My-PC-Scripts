@@ -1,6 +1,6 @@
 <#
     .SYNOPSIS
-        This script installs Office.
+        This script installs Office using the office deployment tool.
     .DESCRIPTION
         This script will download and install Office using config files and MS Guides KMS servers.
     .PARAMETER Office2019
