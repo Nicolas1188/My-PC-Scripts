@@ -1,0 +1,14 @@
+# Exclude program ouput
+*.log
+*.out
+
+# Exclude windows config files
+*.db
+*.ini
+
+# Exclude windows shortcuts
+*.lnk
+*.url
+
+# Exclude OfficeDeploy
+MS Office/OfficeDeploy/
