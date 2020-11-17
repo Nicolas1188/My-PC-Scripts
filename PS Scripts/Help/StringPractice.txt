@@ -1,0 +1,225 @@
+**********************
+PowerShell transcript start
+Start time: 20200901182046
+Username: ASUS-PC\Nicolás
+RunAs User: ASUS-PC\Nicolás
+Configuration Name: 
+Machine: ASUS-PC (Microsoft Windows NT 10.0.19041.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll
+Process ID: 8008
+PSVersion: 7.0.3
+PSEdition: Core
+GitCommitId: 7.0.3
+OS: Microsoft Windows 10.0.19041
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.3
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\Users\Nicolas\Documents\Programs\PowerShell Practise\StringPractice.txt
+PS C:\Users\Nicolas> cls
+PS C:\Users\Nicolas> $Cow = "My Name is chocolate!"
+PS C:\Users\Nicolas> $Cow
+My Name is chocolate!
+PS C:\Users\Nicolas> $Cow.ToUpper()
+MY NAME IS CHOCOLATE!
+PS C:\Users\Nicolas> $Cow.ToLower()
+my name is chocolate!
+PS C:\Users\Nicolas> $Cow.Contains("is")
+True
+PS C:\Users\Nicolas> dir
+
+
+    Directory: C:\Users\Nicolas
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/31/2020     9:29                .android
+d----           8/30/2020    22:29                .vscode
+d-r--           8/31/2020     1:23                3D Objects
+d----           8/30/2020    23:05                Apple
+d-r--           8/31/2020     1:23                Contacts
+d----           8/31/2020    12:09                datamc
+d-r--            9/1/2020    17:28                Desktop
+d-r--           8/30/2020    23:56                Documents
+d-r--           8/31/2020    14:05                Downloads
+d-r--           8/31/2020     1:23                Favorites
+d-r--           8/31/2020     1:23                Links
+d-r--           8/30/2020    23:03                Music
+d-r--           8/30/2020    21:28                OneDrive
+d-r--           8/31/2020    11:42                Pictures
+d-r--           8/31/2020     1:23                Saved Games
+d-r--           8/31/2020     1:25                Searches
+d-r--           8/30/2020    21:55                Videos
+
+PS C:\Users\Nicolas> Get-ChildItem | Where-Object {$_.Name.Contains("3D")}
+
+
+    Directory: C:\Users\Nicolas
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-r--           8/31/2020     1:23                3D Objects
+
+PS C:\Users\Nicolas> Get-ChildItem | Where-Object {$_.Name.ToUpper().Contains("3D")}
+
+
+    Directory: C:\Users\Nicolas
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-r--           8/31/2020     1:23                3D Objects
+
+PS C:\Users\Nicolas> cls
+PS C:\Users\Nicolas> $Cow
+My Name is chocolate!
+PS C:\Users\Nicolas> $Cow.Replace("is","was"9
+At line:1 char:24
++ $Cow.Replace("is","was"9
++                        ~
+Missing ')' in method call.
+
+At line:1 char:24
++ $Cow.Replace("is","was"9
++                        ~
+Unexpected token '9' in expression or statement.
+
+[91mParserError:
+[96mLine |
+[96m   1 | [0m $Cow.Replace("is","was"[96m9[0m
+[96m     | [91m                        ~
+[91m[96m     | [91mMissing ')' in method call.
+[0m
+PS C:\Users\Nicolas> $Cow.Replace("is","was")
+My Name was chocolate!
+PS C:\Users\Nicolas> $Cow
+My Name is chocolate!
+PS C:\Users\Nicolas> $Cow = $Cow.Replace("is","was")
+PS C:\Users\Nicolas> $Cow
+My Name was chocolate!
+PS C:\Users\Nicolas> cls
+PS C:\Users\Nicolas> $Cow.Substring(3)
+Name was chocolate!
+PS C:\Users\Nicolas> $($Cow.Substring(3))
+Name was chocolate!
+PS C:\Users\Nicolas> $($Cow.Substring(0,3))
+My
+PS C:\Users\Nicolas> $($Cow.Substring(3,0))
+
+PS C:\Users\Nicolas> $($Cow.Substring(3))
+Name was chocolate!
+PS C:\Users\Nicolas> $Cow.Substring(3)
+Name was chocolate!
+PS C:\Users\Nicolas> $Cow.TrimStart("was")
+My Name was chocolate!
+PS C:\Users\Nicolas> cls
+PS C:\Users\Nicolas> $Cow
+My Name was chocolate!
+PS C:\Users\Nicolas> $Cow.TrimStart("My ")
+Name was chocolate!
+PS C:\Users\Nicolas> $Cow.TrimStart("Name")
+My Name was chocolate!
+PS C:\Users\Nicolas> $Cow.TrimEnd(("Name")
+
+At line:1 char:22
++ $Cow.TrimEnd(("Name")
++                      ~
+Missing ')' in method call.
+
+[91mParserError:
+[96mLine |
+[96m   1 | [0m $Cow.TrimEnd(("Name")[96m[0m
+[96m     | [91m                      ~
+[91m[96m     | [91mMissing ')' in method call.
+[0m
+PS C:\Users\Nicolas> $Cow.TrimEnd("Name")
+My Name was chocolate!
+PS C:\Users\Nicolas> $Cow.TrimEnd("!")
+My Name was chocolate
+PS C:\Users\Nicolas> $Cow.IndexOf("h")
+13
+PS C:\Users\Nicolas> $Cow.IndexOf("o")
+14
+PS C:\Users\Nicolas> cls
+PS C:\Users\Nicolas> $Url = Https://www.MundoKayaks.com.ar/Blog
+
+Https://www.MundoKayaks.com.ar/Blog: The term 'Https://www.MundoKayaks.com.ar/Blog' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+[91mHttps://www.MundoKayaks.com.ar/Blog: [91mThe term 'Https://www.MundoKayaks.com.ar/Blog' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+PS C:\Users\Nicolas> $Url = "Https://www.MundoKayaks.com.ar/Blog"
+PS C:\Users\Nicolas> $Url
+Https://www.MundoKayaks.com.ar/Blog
+PS C:\Users\Nicolas> $NewURL = $Url.TrimStart("Https://")
+PS C:\Users\Nicolas> $NewURL
+www.MundoKayaks.com.ar/Blog
+PS C:\Users\Nicolas> $NewURL = $NewURL.Substring(0, $NewURL.IndexOf("/"))
+PS C:\Users\Nicolas> $NewURL
+www.MundoKayaks.com.ar
+PS C:\Users\Nicolas> $NewURL | Get-Member
+
+
+   TypeName: System.String
+
+Name                 MemberType            Definition
+----                 ----------            ----------
+Clone                Method                System.Object Clone(), System.Object ICloneable.Clone()
+CompareTo            Method                int CompareTo(System.Object value), int CompareTo(string strB), int ICompar…
+Contains             Method                bool Contains(string value), bool Contains(string value, System.StringCompa…
+CopyTo               Method                void CopyTo(int sourceIndex, char[] destination, int destinationIndex, int …
+EndsWith             Method                bool EndsWith(string value), bool EndsWith(string value, System.StringCompa…
+EnumerateRunes       Method                System.Text.StringRuneEnumerator EnumerateRunes()
+Equals               Method                bool Equals(System.Object obj), bool Equals(string value), bool Equals(stri…
+GetEnumerator        Method                System.CharEnumerator GetEnumerator(), System.Collections.IEnumerator IEnum…
+GetHashCode          Method                int GetHashCode(), int GetHashCode(System.StringComparison comparisonType)
+GetPinnableReference Method                System.Char&, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, Pub…
+GetType              Method                type GetType()
+GetTypeCode          Method                System.TypeCode GetTypeCode(), System.TypeCode IConvertible.GetTypeCode()
+IndexOf              Method                int IndexOf(char value), int IndexOf(char value, int startIndex), int Index…
+IndexOfAny           Method                int IndexOfAny(char[] anyOf), int IndexOfAny(char[] anyOf, int startIndex),…
+Insert               Method                string Insert(int startIndex, string value)
+IsNormalized         Method                bool IsNormalized(), bool IsNormalized(System.Text.NormalizationForm normal…
+LastIndexOf          Method                int LastIndexOf(char value), int LastIndexOf(char value, int startIndex), i…
+LastIndexOfAny       Method                int LastIndexOfAny(char[] anyOf), int LastIndexOfAny(char[] anyOf, int star…
+Normalize            Method                string Normalize(), string Normalize(System.Text.NormalizationForm normaliz…
+PadLeft              Method                string PadLeft(int totalWidth), string PadLeft(int totalWidth, char padding…
+PadRight             Method                string PadRight(int totalWidth), string PadRight(int totalWidth, char paddi…
+Remove               Method                string Remove(int startIndex, int count), string Remove(int startIndex)
+Replace              Method                string Replace(string oldValue, string newValue), string Replace(string old…
+Split                Method                string[] Split(char separator, System.StringSplitOptions options), string[]…
+StartsWith           Method                bool StartsWith(string value), bool StartsWith(string value, System.StringC…
+Substring            Method                string Substring(int startIndex), string Substring(int startIndex, int leng…
+ToBoolean            Method                bool IConvertible.ToBoolean(System.IFormatProvider provider)
+ToByte               Method                byte IConvertible.ToByte(System.IFormatProvider provider)
+ToChar               Method                char IConvertible.ToChar(System.IFormatProvider provider)
+ToCharArray          Method                char[] ToCharArray(), char[] ToCharArray(int startIndex, int length)
+ToDateTime           Method                datetime IConvertible.ToDateTime(System.IFormatProvider provider)
+ToDecimal            Method                decimal IConvertible.ToDecimal(System.IFormatProvider provider)
+ToDouble             Method                double IConvertible.ToDouble(System.IFormatProvider provider)
+ToInt16              Method                short IConvertible.ToInt16(System.IFormatProvider provider)
+ToInt32              Method                int IConvertible.ToInt32(System.IFormatProvider provider)
+ToInt64              Method                long IConvertible.ToInt64(System.IFormatProvider provider)
+ToLower              Method                string ToLower(), string ToLower(cultureinfo culture)
+ToLowerInvariant     Method                string ToLowerInvariant()
+ToSByte              Method                sbyte IConvertible.ToSByte(System.IFormatProvider provider)
+ToSingle             Method                float IConvertible.ToSingle(System.IFormatProvider provider)
+ToString             Method                string ToString(), string ToString(System.IFormatProvider provider), string…
+ToType               Method                System.Object IConvertible.ToType(type conversionType, System.IFormatProvid…
+ToUInt16             Method                ushort IConvertible.ToUInt16(System.IFormatProvider provider)
+ToUInt32             Method                uint IConvertible.ToUInt32(System.IFormatProvider provider)
+ToUInt64             Method                ulong IConvertible.ToUInt64(System.IFormatProvider provider)
+ToUpper              Method                string ToUpper(), string ToUpper(cultureinfo culture)
+ToUpperInvariant     Method                string ToUpperInvariant()
+Trim                 Method                string Trim(), string Trim(char trimChar), string Trim(Params char[] trimCh…
+TrimEnd              Method                string TrimEnd(), string TrimEnd(char trimChar), string TrimEnd(Params char…
+TrimStart            Method                string TrimStart(), string TrimStart(char trimChar), string TrimStart(Param…
+Chars                ParameterizedProperty char Chars(int index) {get;}
+Length               Property              int Length {get;}
+
+PS C:\Users\Nicolas> Stop-Transcript
+**********************
+PowerShell transcript end
+End time: 20200901184735
+**********************

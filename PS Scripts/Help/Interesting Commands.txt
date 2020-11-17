@@ -1,0 +1,205 @@
+PowerShell 7.0.1 cmdlets I found interesting
+
+========================================================================================================================================================================================
+
+About PowerShell:
+$PSVersionTable
+$confirmpreference
+$confirmpreference = <Low/Medium/High>
+Get-ExecutionPolicy
+Set-ExecutionPolicy 
+
+========================================================================================================================================================================================
+
+In PowerShell:
+Out-File
+Out-GridView
+
+export-clixml
+export-csv
+Import-clixml
+Import-csv
+
+Stop-Process -confirm:$false
+-PassThru
+Compare-Object
+
+Measure-Command: outputs the ammount of time it takes for a command to process
+
+Test-Path to see if a ceratin file/directory exists
+
+========================================================================================================================================================================================
+
+Hash Table:
+$paramout = @{'ComputerName'=$ComputerName;
+'Memory'=$win32CSOut.totalphyisicalmemory;
+'FreeMemory'=$win32CSOut.freephysicalmemory;
+'Procs'=$win32CSOut.numberofprocessors;
+'Version'=$win32CSOut.Version}
+
+========================================================================================================================================================================================
+
+Remoting: (Uses Win-RM)
+Remote machines use different sessions for each command unless you configure a session.
+When remoting the dat has to be serialized into XML and then deserialized, so it's important to manage the computational resources required for a ceratin command. 	
+
+Get-PSSessionConfiguration
+Invoke-Command -ComputerName <ComputerName> {<Cmdlet>}
+Enable-PSRemoting or Use group policy
+
+$session = New-PSSession -ComputerName ADMIN-PC
+Invoke-Command -Session $session -ScripBlock {$var = 10}
+Invoke-Command -Session $session -ScripBlock {$var}
+$session | Remove-PSSession
+
+Enter-PSSession 
+
+========================================================================================================================================================================================
+
+Editing the registry:
+1. Use the Push-Location cmdlet to save the current working location.
+2. Use the Set-Location cmdlet to change to the appropriate registry drive.
+3. Use the Set-ItemProperty cmdlet to assign a new value to the registry property.
+4. Use the Pop-Location cmdlet to return to the original working location.
+
+When a registry value exists:
+C:\> Push-Location
+C:\> Set-Location HKCU:\Software\hsg
+HKCU:\Software\hsg> Set-ItemProperty . newproperty “mynewvalue”
+HKCU:\Software\hsg> Pop-Location
+C:\>
+or
+PS C:\> Set-ItemProperty -Path HKCU:\Software\hsg -Name newproperty -Value anewvalue
+
+Given that Test-Path doesn't work in the registry, it's recommended to use this technique:
+
+if ((Get-ItemProperty HKCU:\Software\hsg -Name bogus -ea 0).bogus) {‘Propertyalready exists’}
+ELSE { Set-ItemProperty -Path HKCU:\Software\hsg -Name bogus -Value’initial value’}
+
+Decimal to Hexadecimal conversion:
+'{0:x}' -f [Int]
+'{0:x8}' -f [Int] (for hexadecimals with 8 digits)
+
+========================================================================================================================================================================================
+
+Scripting:
+$PSCriptRoot
+
+(!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator'))
+Check admin
+Start-Process powershell.exe -ArgumentList ("-File `"{0}`"" -f $PSCommandPath) -Verb RunAs
+Runs ad admin
+
+To run as admin:
+if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator')) {
+    Start-Process powershell.exe -ArgumentList ("-File `"{0}`"" -f $PSCommandPath) -Verb RunAs
+    Write-Output "$env:USERNAME, this script needs admin privileges"
+    Start-Sleep 2
+    Exit
+}
+
+To include paramters for a script use param ([Parameter][string] $Name, [Parameter2][Int32] $Number)
+You can use aliases instead of the name of the parameter using param ([Alias["Friend"] [string] $Name])
+You can use a swith wich, if it's present, it's going to take a "$true" value, otherwise it's "$false"
+
+The following cand accept values from the pipeline ([cmdletbinding()] is required, as well as ValuefromPipeline=$true)
+[cmdletbinding)()]
+param (
+    [Parameter(ValuefromPipeline=$true, Mandatory=$true)][string[]] $Computers
+)
+
+Try and Catch to handle errors:
+$lookinggood = $true
+Try
+{
+    $win32CSOut = Get-WmiObject -class win32_computersystem `
+        -ComputerName $computername -ErrorAction Stop
+}
+Catch
+{
+    "Something bad: $_"
+    $lookinggood = $false
+}
+if ($lookinggood)
+{
+    <Code>
+}
+
+Now in PS 7:
+We can use ? to test if a condition is true or false
+<Condition> ? <if-true> : <if-false>
+We can use && to run what's in the right hand if the left hand succeeds
+<cmdlet1> && <cmdlet2>
+Or we can use || to run what's in the right hand if the left hand fails
+<cmdlet1> || <cmdlet2>
+We can use ?? to run what's in the right hand if the left hand is $null
+$answer = $null
+$answer ?? 42
+{Get-Module -ListAvailable AzureAD} ?? {Install-Module AzureAD}
+$answer = $null
+$answer ??= 42
+
+We can enale the experimental feature: PSNullConditionalOperators to run code like the following:
+$proc = Get-Process -Name notepad
+${proc}?.Id # This will attempt to get the variable $proc and, if it's not null, it will get the Id member.
+
+========================================================================================================================================================================================
+
+WorkFlows:
+A workflow is there to enable a certain PSScript to run in a way that can be suspended and resumed in case the script takes a long time.
+
+The keywords are:
+workflow <Name> {
+    param (
+        [Parameter()]
+        [Type] $Name
+    )
+    <Script
+}
+
+<Name> -AsJob -JobName <JobName> # This executes the workflow
+The -AsJob parameter allows me to run the script in the backround so I can keep ussing the terminal
+
+Suspend-Job <JobName> # Suspends.
+Get-Job <JobName> # Reports the sate of the object that is the Job.
+Receive-Job <JobName> # Shows evereithing that has been outputted to the console by the Job.
+Resume-Job # Resumes.
+Remove-Job # Deletes the object that is the Job.
+
+Running in parallel:
+You can run certain things in parellel by using:
+workflow <Name> {
+    parallel {
+        <cmdlet>
+        <cmdlet>
+        <cmdlet>
+    }
+}
+
+foreach -parallel ($object in $collection) {
+    <cmdlet>
+    <cmdlet>
+    <cmdlet>
+}
+
+You can also run ceratin actions in sequence:
+workflow <Name> {
+    param (
+        [Parameter()]
+        [Type[]] $Name
+    )
+    foreach -parallel ($Object in $Collection) {
+        sequence {
+            <cmdlet1>
+            <cmdlet2>
+        }
+    }
+}
+<Name> -Name Name1, Name2
+
+You can't run Assemblies in workflows, instead you should use an inline script.
+1. You can't use Assemblies
+2. You can't use method invocations ($string.ToLower())
+3. You can't use a Case Sensitive switch statement
+4. You can't use $global scope
+5. Some cmdlets will not work (Specially if they require interactive environment)

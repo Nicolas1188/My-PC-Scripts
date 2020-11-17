@@ -1,0 +1,11 @@
+1° July, 2020
+MSGuides Useful Links for Office products.
+
+Guide for Installing Office:
+https://msguides.com/microsoft-software-products/office-2019.html
+
+Office Prodicts Links:
+https://msguides.com/microsoft-software-products/download-microsoft-office-windows-os.html
+
+Spanish Language extension (apparently broken):
+https://go.microsoft.com/fwlink/?LinkId=210612

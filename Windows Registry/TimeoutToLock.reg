@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+; Lock Windows after x ammount of time (decimal values)
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"InactivityTimeoutSecs"=dword:00000384
