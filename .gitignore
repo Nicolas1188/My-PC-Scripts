@@ -10,5 +10,5 @@
 *.lnk
 *.url
 
-# Exclude OfficeDeploy
+# Exclude Office deployment tool and it's files (To avoid licencing conflicts)
 MS Office/OfficeDeploy/
