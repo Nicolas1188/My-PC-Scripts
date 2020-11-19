@@ -28,9 +28,25 @@
     .EXAMPLE
         'QuickBackUp.ps1' -Path D:\ -Log -SaveSettings -Extras 'C:\Example'
     .NOTES
-        Author: Nicolás Castellán
+        Author: @Nicolas1188
 #>
-# This script was written by Nicolás Castellán to create a quick backup for the user
+# This script was written by @Nicolas1188 to create a quick backup for the user
+
+# Apache License, version 2
+
+# Copyright 2020 Nicolas1188
+
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+
+#    http://www.apache.org/licenses/LICENSE-2.0
+
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 [CmdletBinding()]
 param (
@@ -343,5 +359,5 @@ Stop-Transcript | Out-Null
 Move-Item -Path "$env:SystemDrive\TemporalFolder\${Date}.log" -Destination $Path -Force
 Remove-Item -Path "$env:SystemDrive\TemporalFolder" -Force | Out-Null
 
-# This script was made by Nicolás Castellán,
-# Contact me at: nicolas.castell.1188@gmail.com
+# This file was made by @Nicolas1188,
+# This is the repository: https://github.com/Nicolas1188/My-PC-Share.git

@@ -3,27 +3,21 @@ cls
 echo.
 echo Property Finder Started
 
-@REM MIT License
+@REM Apache License, version 2
 
-@REM Copyright (c) 2020 Nicolas1188
+@REM Copyright 2020 Nicolas1188
 
-@REM Permission is hereby granted, free of charge, to any person obtaining a copy
-@REM of this software and associated documentation files (the "Software"), to deal
-@REM in the Software without restriction, including without limitation the rights
-@REM to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-@REM copies of the Software, and to permit persons to whom the Software is
-@REM furnished to do so, subject to the following conditions:
+@REM Licensed under the Apache License, Version 2.0 (the "License");
+@REM you may not use this file except in compliance with the License.
+@REM You may obtain a copy of the License at
 
-@REM The above copyright notice and this permission notice shall be included in all
-@REM copies or substantial portions of the Software.
+@REM    http://www.apache.org/licenses/LICENSE-2.0
 
-@REM THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-@REM IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-@REM FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-@REM AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-@REM LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-@REM OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-@REM SOFTWARE.
+@REM Unless required by applicable law or agreed to in writing, software
+@REM distributed under the License is distributed on an "AS IS" BASIS,
+@REM WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+@REM See the License for the specific language governing permissions and
+@REM limitations under the License.
 
 :start
 choice /c SF /n /m "Summarized (S) or Fully Detailed (F) >"

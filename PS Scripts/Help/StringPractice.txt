@@ -1,8 +1,8 @@
 **********************
 PowerShell transcript start
 Start time: 20200901182046
-Username: ASUS-PC\Nicolás
-RunAs User: ASUS-PC\Nicolás
+Username: ASUS-PC\@Nicolas1188
+RunAs User: ASUS-PC\@Nicolas1188
 Configuration Name: 
 Machine: ASUS-PC (Microsoft Windows NT 10.0.19041.0)
 Host Application: C:\Program Files\PowerShell\7\pwsh.dll

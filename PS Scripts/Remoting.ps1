@@ -22,9 +22,26 @@
     .EXAMPLE
         .\Remoting.ps1 -Computers PC -Clear
     .NOTES
-        Author: Nicolás Castellán
+        Author: @Nicolas1188
 #>
-#This script was made by Nicolás Castellán to add/remove a PC from the trusted hosts.
+#This script was made by @Nicolas1188 to add/remove a PC from the trusted hosts.
+
+# Apache License, version 2
+
+# Copyright 2020 Nicolas1188
+
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+
+#    http://www.apache.org/licenses/LICENSE-2.0
+
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 [CmdletBinding(DefaultParameterSetName='Add')]
 param (
     [Parameter(ParameterSetName='Clear', Position=0, Mandatory=$false)]
@@ -77,3 +94,6 @@ if ($Clear) {
     if (!$Silently) {Write-Host "The trusted hosts have been cleared." -ForegroundColor Green}
 }
 #endregion
+
+# This file was made by @Nicolas1188,
+# This is the repository: https://github.com/Nicolas1188/My-PC-Share.git
