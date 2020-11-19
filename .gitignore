@@ -1,14 +1,16 @@
-# Exclude program ouput
-*.log
-*.out
-
-# Exclude windows config files
+# Exclude windows config files, shortcuts and temporary files
 *.db
 *.ini
-
-# Exclude windows shortcuts
 *.lnk
 *.url
+~*
+
+# Exclude test and tmp files
+*test*
+*tmp*
 
 # Exclude Office deployment tool and it's files (To avoid licencing conflicts)
 MS Office/OfficeDeploy/
+
+# Exclude log files
+*.log
