@@ -95,5 +95,5 @@ if ($Clear) {
 }
 #endregion
 
-# This file was made by @Nicolas1188,
-# This is the repository: https://github.com/Nicolas1188/My-PC-Share.git
+# This file's repository is: https://github.com/Nicolas1188/My-PC-Share.git
+# Thanks for downloading, and enjoy!
