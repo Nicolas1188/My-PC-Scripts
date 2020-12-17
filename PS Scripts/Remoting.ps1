@@ -94,6 +94,3 @@ if ($Clear) {
     if (!$Silently) {Write-Host "The trusted hosts have been cleared." -ForegroundColor Green}
 }
 #endregion
-
-# This file's repository is: https://github.com/Nicolas1188/My-PC-Share.git
-# Thanks for downloading, and enjoy!

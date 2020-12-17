@@ -74,6 +74,3 @@ $TimeElapsed = ("{0}:{1}:{2}" -f `
 Write-Host "Time taken to install: $TimeElapsed"
 
 Pop-Location
-
-# This file's repository is: https://github.com/Nicolas1188/My-PC-Share.git
-# Thanks for downloading, and enjoy!

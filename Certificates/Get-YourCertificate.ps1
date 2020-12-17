@@ -87,6 +87,3 @@ foreach ($Email in $Emails) {
 }
 
 Pop-Location
-
-# This file's repository is: https://github.com/Nicolas1188/My-PC-Share.git
-# Thanks for downloading, and enjoy!

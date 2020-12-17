@@ -202,6 +202,3 @@ Start-Logoff
 
 #===========================================================================
 #endregion Editing the registry
-
-# This file's repository is: https://github.com/Nicolas1188/My-PC-Share.git
-# Thanks for downloading, and enjoy!
