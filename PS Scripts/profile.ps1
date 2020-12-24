@@ -67,3 +67,5 @@ function Clear-CNTrustedHost {
         if (!$Silently) {Write-Host "The trusted hosts have been cleared." -ForegroundColor Green}
     }
 }
+
+# Thanks for downloading, and enjoy!

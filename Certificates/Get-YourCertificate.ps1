@@ -86,10 +86,12 @@ foreach ($Email in $Emails) {
 
     Write-Verbose -Message "Cleaning up..."
     if (!$KeepCertificates) {Remove-Item -Path ".\$Email.crt"}
-    
+
     Write-Output "" "Your certificate has been installed in the current user." ""
     Write-Host "---------------------------------------------------------------------------------------------------------------" -ForegroundColor Blue
 
 }
 
 Pop-Location
+
+# Thanks for downloading, and enjoy!

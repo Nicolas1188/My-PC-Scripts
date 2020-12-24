@@ -29,7 +29,7 @@ if (!$Hours -eq 0) {
             Write-Host -NoNewline "`rRemaining: $var"
             Start-Sleep -Seconds 1
         }
-        
+
     }
 } elseif (!$Seconds -eq 0) {
     $Time = $Seconds - 1
@@ -41,3 +41,5 @@ if (!$Hours -eq 0) {
 } else {Write-Error -Message "Something went wrong..."}
 #===========================================================================
 #endregion Timers
+
+# Thanks for downloading, and enjoy!

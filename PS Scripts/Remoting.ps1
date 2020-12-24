@@ -100,3 +100,5 @@ if ($Clear) {
     if (!$Silently) {Write-Host "The trusted hosts have been cleared." -ForegroundColor Green}
 }
 #endregion
+
+# Thanks for downloading, and enjoy!

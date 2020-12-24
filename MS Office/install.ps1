@@ -80,3 +80,5 @@ $TimeElapsed = ("{0}:{1}:{2}" -f `
 Write-Host "Time taken to install: $TimeElapsed"
 
 Pop-Location
+
+# Thanks for downloading, and enjoy!

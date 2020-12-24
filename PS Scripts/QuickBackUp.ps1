@@ -183,7 +183,7 @@ if ($SaveSettings) {
 # Setting the Backing directory of the script.
 $BkPath = New-Item -Path $Path -Type Directory -Name ${Date} -Force
 
-<# 
+<#
     What follows now are 3 regions specialized in backing 3 diferent things:
         1. Home directory. (Backed by default)
         2. Minecraft. (-Minecraft parameter)
@@ -364,3 +364,5 @@ Write-Host "Script has ended in $TotalTimeELapsed." -ForegroundColor Green
 Stop-Transcript | Out-Null
 Move-Item -Path "$env:SystemDrive\TemporalFolder\${Date}.log" -Destination $Path -Force
 Remove-Item -Path "$env:SystemDrive\TemporalFolder" -Force | Out-Null
+
+# Thanks for downloading, and enjoy!

@@ -208,3 +208,5 @@ Start-Logoff
 
 #===========================================================================
 #endregion Editing the registry
+
+# Thanks for downloading, and enjoy!
