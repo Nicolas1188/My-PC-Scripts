@@ -5,7 +5,7 @@ echo Property Finder Started
 
 @REM Apache License, version 2
 
-@REM Copyright 2020 Nicolas1188
+@REM Copyright 2020 nico-castell
 
 @REM Licensed under the Apache License, Version 2.0 (the "License");
 @REM you may not use this file except in compliance with the License.

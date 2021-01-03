@@ -20,9 +20,9 @@ function New-CNTrustedHost {
         .EXAMPLE
             New-CNTrustedHost -Computers PC -Silently
         .NOTES
-            Author: Nicolás Castellán
+            Author: nico-castell
     #>
-    #This function was made by Nicolás Castellán to add a PC to the trusted hosts.
+    #This function was made by nico-castell to add a PC to the trusted hosts.
     Write-Verbose -Message "Function has started."
     # This part of the function checks for admin permissions.
     if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator')) {
@@ -52,9 +52,9 @@ function Clear-CNTrustedHost {
         .EXAMPLE
             Clear-CNTrustedHost -Silently
         .NOTES
-            Author: Nicolás Castellán
+            Author: nico-castell
     #>
-    #This function was made by Nicolás Castellán to add a PC to the trusted hosts.
+    #This function was made by nico-castell to add a PC to the trusted hosts.
     Write-Verbose -Message "Function has started."
     # This part of the function checks for admin permissions.
     if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator')) {
