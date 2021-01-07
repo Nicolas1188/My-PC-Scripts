@@ -13,7 +13,7 @@
 
 # MIT License
 
-# Copyright (c) 2020 nico-castell
+# Copyright (c) 2021 nico-castell
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
