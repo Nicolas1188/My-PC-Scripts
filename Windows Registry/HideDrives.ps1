@@ -24,9 +24,9 @@
     .EXAMPLE
         .\HideDrives.ps1 -HideAll
     .NOTES
-        Author: @Nicolas1188
+        Author: @nico-castell
 #>
-# This script was written by @Nicolas1188 to hide / unhide drive letters from the file explorer using a Windows registry edit.
+# This script was written by @nico-castell to hide / unhide drive letters from the file explorer using a Windows registry edit.
 
 # MIT License
 

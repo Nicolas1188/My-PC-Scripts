@@ -22,9 +22,9 @@
     .EXAMPLE
         .\Remoting.ps1 -Computers PC -Clear
     .NOTES
-        Author: @Nicolas1188
+        Author: @nico-castell
 #>
-#This script was made by @Nicolas1188 to add/remove a PC from the trusted hosts.
+#This script was made by @nico-castell to add/remove a PC from the trusted hosts.
 
 # MIT License
 

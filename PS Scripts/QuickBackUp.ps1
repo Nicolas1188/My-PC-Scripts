@@ -28,9 +28,9 @@
     .EXAMPLE
         'QuickBackUp.ps1' -Path D:\ -Log -SaveSettings -Extras 'C:\Example'
     .NOTES
-        Author: @Nicolas1188
+        Author: @nico-castell
 #>
-# This script was written by @Nicolas1188 to create a quick backup for the user
+# This script was written by @nico-castell to create a quick backup for the user
 
 # MIT License
 

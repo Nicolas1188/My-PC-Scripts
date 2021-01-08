@@ -15,9 +15,9 @@
     .EXAMPLE
         .\Get-YourCertificate.ps1 -email@example.com -KeepCertificates
     .NOTES
-        Author: @Nicolas1188
+        Author: @nico-castell
 #>
-# This script was written by @Nicolas1188 to get a Code Signing Certificate using your e-mail address.
+# This script was written by @nico-castell to get a Code Signing Certificate using your e-mail address.
 
 # MIT License
 
