@@ -16,6 +16,10 @@ Windows Registry Editor Version 5.00
 ; See the License for the specific language governing permissions and
 ; limitations under the License.
 
+; Ask for password to gain administrative access
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"ConsentPromptBehaviorAdmin"=dword:00000001
+
 ; Enable verbose service startup/shutdown messages.
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
 "VersboseStatus"=dword:00000000
