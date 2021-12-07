@@ -27,7 +27,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
 "VersboseStatus"=dword:00000001
 
-; Open last active Window in Taskbar.
+; Open last active Window in Taskbar. (Probably requires you to log out and log back in)
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "LastActiveClick"=dword:00000001
 

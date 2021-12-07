@@ -1,4 +1,5 @@
 Windows Registry Editor Version 5.00
 
+; Configure Windows to write the UTC time to the BIOS clock (useful if dual booting with Linux)
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
   "RealTimeIsUniversal"=dword:00000001
