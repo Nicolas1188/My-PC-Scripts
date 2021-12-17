@@ -31,3 +31,8 @@ Windows Registry Editor Version 5.00
 ; Enable configuration of the lock screen timeout
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\7516b95f-f776-4464-8c53-06167f40cc99\8EC4B3A5-6868-48c2-BE75-4F3044BE88A7]
 "Attributes"=dword:00000002
+
+; Disable Telemetry, see:
+; https://winaero.com/how-to-disable-telemetry-and-data-collection-in-windows-10/?utm_source=software&utm_medium=in-app&utm_campaign=winaerotweaker&utm_content=disabletelemetry)
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"AllowTelemetry"=dword:00000000
